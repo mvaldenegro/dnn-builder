@@ -14,6 +14,7 @@ def DenseNet(input_shape,
              classes=10,
              reduction=0.5):
     assert regularization in [None, 'dropout']
+    assert pooling in [None, 'avg', 'max']
 
     inp = layers.Input(shape=input_shape)
 
