@@ -135,7 +135,7 @@ def VGG16(input_shape,
     if include_top:
         # Classification block
         x = layers.Flatten(name='flatten')(x)
-        x = layers.Dense(neurons_fc2, activation='relu', name='fc1')(x)
+        x = layers.Dense(neurons_fc1, activation='relu', name='fc1')(x)
 
         if regularization is 'bn':
             x = layers.BatchNormalization(axis=bn_axis)(x)
