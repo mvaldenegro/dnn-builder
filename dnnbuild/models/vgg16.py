@@ -138,14 +138,14 @@ def VGG16(input_shape,
         x = layers.Dense(neurons_fc1, activation='relu', name='fc1')(x)
 
         if regularization is 'bn':
-            x = layers.BatchNormalization(axis=bn_axis)(x)
+            x = layers.BatchNormalization()(x)
         elif regularization is 'dropout':
             x = layers.Dropout(rate=dropout_prob, noise_shape=dropout_noise_shape)(x)
 
         x = layers.Dense(neurons_fc2, activation='relu', name='fc2')(x)
 
         if regularization is 'bn':
-            x = layers.BatchNormalization(axis=bn_axis)(x)
+            x = layers.BatchNormalization()(x)
         elif regularization is 'dropout':
             x = layers.Dropout(rate=dropout_prob, noise_shape=dropout_noise_shape)(x)
 
